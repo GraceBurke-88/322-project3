@@ -7,12 +7,12 @@ import TaskItem from './TaskItem';
 class TaskList extends React.Component {
 
   markDone = (task) => {
-    this.props.markDone(task.id);
+    this.props.markDone(task._id);
   }
 
   render() {
     const taskItems = this.props.tasks.map(task => {
-      return <TaskItem task={task} key={task.id} markDone={this.markDone} />
+      return <TaskItem task={task} key={task._id} markDone={this.markDone} />
     });
 
     return (

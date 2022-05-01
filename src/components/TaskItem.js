@@ -3,7 +3,9 @@ import React from 'react';
 const TaskItem = props => {
   return (
     <li className="list-group-item">
-      { props.task.title }
+      { props.task.name }
+      <br/> Balance: <n/>
+      { props.task.balance }
       <button type="button"
               onClick={() => props.markDone(props.task)}
               className="btn btn-primary" style={{ float: 'right' }}>

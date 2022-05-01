@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import TaskList from './TaskList';
 import AddTask from './AddTask';
-import { setTasks, tasksError } from "../actions";
+import { setTasks, tasksError, accountsError } from "../actions";
 import PageTabs from './PageTabs';
 import Page1 from './Page1';
 import Page2 from './Page2';
@@ -19,13 +19,16 @@ class App extends React.Component {
   }
 
   getData() {
-    axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/posts')
+    axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/accounts')
       .then(response => {
         this.props.setTasks(response.data);
+        console.log(response.data)
       }).catch(error => {
         this.props.tasksError();
       });
   }
+
+
   state = {
     view: 'page1'
   }
@@ -64,9 +67,7 @@ class App extends React.Component {
             <h2>Invalid Tab, choose another</h2>
         ));
     }
-
   }
-
 }
 
 const mapStateToProps = (state) => {
@@ -75,4 +76,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { setTasks, tasksError })(App);
+export default connect(mapStateToProps, { setTasks, tasksError, accountsError })(App);
