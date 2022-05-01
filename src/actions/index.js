@@ -26,6 +26,7 @@ export const tasksError = errorMessage => {
   }
 };
 
+//new
 
 export const setAccounts = accounts => {
   return {
@@ -33,6 +34,20 @@ export const setAccounts = accounts => {
     payload: accounts
   }
 };
+
+export const addAccount = (text) => {
+  return {
+    type: 'ADD_ACCOUNT',
+    payload: text
+  }
+}
+
+export const deleteAccount = (accountId) => {
+  return {
+    type: 'DELETE_ACCOUNT',
+    payload: accountId
+  }
+}
 
 export const accountsError = errorMessage => {
   return {

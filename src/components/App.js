@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import TaskList from './TaskList';
 import AddTask from './AddTask';
-import { setTasks, tasksError, accountsError } from "../actions";
+import { setTasks, tasksError, setAccounts, accountsError } from "../actions";
 import PageTabs from './PageTabs';
 import Page1 from './Page1';
 import Page2 from './Page2';
@@ -21,10 +21,10 @@ class App extends React.Component {
   getData() {
     axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/accounts')
       .then(response => {
-        this.props.setTasks(response.data);
+        this.props.setAccounts(response.data);
         console.log(response.data)
       }).catch(error => {
-        this.props.tasksError();
+        this.props.accountsError();
       });
   }
 
@@ -76,4 +76,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { setTasks, tasksError, accountsError })(App);
+export default connect(mapStateToProps, { setTasks, tasksError, setAccounts, accountsError })(App);

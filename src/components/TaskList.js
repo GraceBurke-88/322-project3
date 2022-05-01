@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { markDone } from '../actions';
 
-import TaskItem from './TaskItem';
+import TaskItem1 from './TaskItem1';
 
 class TaskList extends React.Component {
 
@@ -12,12 +12,12 @@ class TaskList extends React.Component {
 
   render() {
     const taskItems = this.props.tasks.map(task => {
-      return <TaskItem task={task} key={task._id} markDone={this.markDone} />
+      return <TaskItem1 task={task} key={task._id} markDone={this.markDone} />
     });
 
     return (
       <ul className="task-list list-group">
-        { taskItems }
+          { taskItems }
       </ul>
     )
   }

@@ -1,9 +1,10 @@
 import React from 'react';
 
-const TaskItem = props => {
+const TaskItem1 = props => {
   return (
-    <li className="list-group-item">
-      { props.task.name }
+
+    <li className="list-group-item" style={{}}>
+      <h3>{ props.task.name }</h3>
       <br/> Balance: <n/>
       { props.task.balance }
       <button type="button"
@@ -11,8 +12,9 @@ const TaskItem = props => {
               className="btn btn-primary" style={{ float: 'right' }}>
         Done
       </button>
-    </li>
+        </li>
+
   )
 };
 
-export default TaskItem;
+export default TaskItem1;
