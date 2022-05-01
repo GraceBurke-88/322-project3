@@ -5,8 +5,14 @@ import { connect } from 'react-redux';
 import TaskList from './TaskList';
 import AddTask from './AddTask';
 import { setTasks, tasksError } from "../actions";
+import PageTabs from './PageTabs';
+import Page1 from './Page1';
+import Page2 from './Page2';
+
+
 
 class App extends React.Component {
+
 
   componentDidMount() {
     this.getData();
@@ -20,14 +26,45 @@ class App extends React.Component {
         this.props.tasksError();
       });
   }
+  state = {
+    view: 'page1'
+  }
+
+  onViewChange(view) {
+    this.setState({ view });
+  }
+
+  wrapPage(jsx) {
+    const { view } = this.state;
+    return (
+        <div className="container">
+          <PageTabs currentView={view}
+                    onViewChange={this.onViewChange.bind(this)}/>
+          {jsx}
+        </div>
+    );
+  }
+
 
   render() {
-    return (
-      <div className="container">
-        <AddTask />
-        <TaskList />
-      </div>
-    );
+    const { view } = this.state;
+
+    switch (view) {
+      case 'page1':
+        return (this.wrapPage(
+            <Page1 />
+        ));
+      case 'page2':
+        return (this.wrapPage(
+            <Page2 />
+        ));
+
+      default:
+        return (this.wrapPage(
+            <h2>Invalid Tab, choose another</h2>
+        ));
+    }
+
   }
 
 }
