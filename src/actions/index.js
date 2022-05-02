@@ -1,33 +1,4 @@
 
-export const setTasks = tasks => {
-  return {
-    type: 'SET_TASKS',
-    payload: tasks
-  }
-};
-
-export const addTask = (text) => {
-  return {
-    type: 'ADD_TASK',
-    payload: text
-  }
-}
-
-export const markDone = (taskId) => {
-  return {
-    type: 'MARK_DONE',
-    payload: taskId
-  }
-}
-
-export const tasksError = errorMessage => {
-  return {
-    type: 'TASKS_ERROR'
-  }
-};
-
-//new
-
 export const setAccounts = accounts => {
   return {
     type: 'SET_ACCOUNTS',
@@ -56,3 +27,19 @@ export const accountsError = errorMessage => {
     type: 'ACCOUNTS_ERROR'
   }
 };
+
+export function selectAccount(accountId){
+  return {
+    type: 'ACCOUNT_SELECTED',
+    payload: accountId
+  }
+}
+
+export const deposit = ( _id, amount) => {
+  return {
+    type: 'DEPOSIT',
+    payload: {
+      _id, amount
+    }
+  }
+}

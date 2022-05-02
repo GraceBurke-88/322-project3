@@ -2,13 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import TaskList from './AccountList';
-import AddTask from './AddAccount';
-import { setTasks, tasksError, setAccounts, accountsError } from "../actions";
+import { setAccounts, accountsError } from "../actions";
 import PageTabs from './pages/PageTabs';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
-
+import Page3 from './pages/Page3';
 
 
 class App extends React.Component {
@@ -61,7 +59,10 @@ class App extends React.Component {
         return (this.wrapPage(
             <Page2 />
         ));
-
+      case 'page3':
+        return (this.wrapPage(
+            <Page3 />
+        ));
       default:
         return (this.wrapPage(
             <h2>Invalid Tab, choose another</h2>
@@ -76,4 +77,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { setTasks, tasksError, setAccounts, accountsError })(App);
+export default connect(mapStateToProps, {  setAccounts, accountsError })(App);

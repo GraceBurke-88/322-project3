@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { addAccount} from "../actions";
 
-class AddAccount extends React.Component {
+class Withdraw extends React.Component {
     state = { name: '', balance: '' }
 
     onFormSubmit = (event) => {
@@ -15,15 +15,8 @@ class AddAccount extends React.Component {
     render () {
         return (
             <form onSubmit={this.onFormSubmit}>
-                <div className="form-group">
-                    <label>Name</label>
-                    <input type="text" className="form-control"
-                           name="name" value={this.state.name}
-                           onChange={(e) => this.setState({name: e.target.value})} />
-                </div>
-
-                <div className="form-group">
-                    <label>Balance</label>
+                <div className="form-group" style={{maxWidth:"200px"}}>
+                    <label>Withdraw</label>
                     <input type="number" className="form-control"
                            name="balance" value={this.state.balance}
                            onChange={(e) => this.setState({balance: e.target.value})} />
@@ -35,4 +28,4 @@ class AddAccount extends React.Component {
     }
 }
 
-export default connect(null,{addAccount, })(AddAccount);
+export default connect(null,{addAccount})(Withdraw);

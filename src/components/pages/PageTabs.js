@@ -19,19 +19,19 @@ class PageTabs extends React.Component {
                 <li className='nav-item'>
                     <a className={this.isActiveTab('page1')}
                        onClick={(e) => this.onTabClick(e, 'page1')}>
-                        Grid View
+                        Dashboard
                     </a>
                 </li>
                 <li className='nav-item'>
                     <a className={this.isActiveTab('page2')}
                        onClick={(e) => this.onTabClick(e, 'page2')}>
-                        List View
+                        Account Overview
                     </a>
                 </li>
                 <li className='nav-item'>
                     <a className={this.isActiveTab('page3')}
                        onClick={(e) => this.onTabClick(e, 'page3')}>
-                        Add Task
+                        Add Account
                     </a>
                 </li>
             </ul>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {deleteAccount, markDone} from '../actions';
+import {deleteAccount, selectAccount, deposit} from '../actions';
 
 
 import AccountItem from './AccountItem';
+
 
 class AccountList extends React.Component {
 
@@ -11,9 +12,14 @@ class AccountList extends React.Component {
     this.props.deleteAccount(account._id);
   }
 
+  selectAccount = (account) => {
+    this.props.selectAccount(account._id);
+  }
+
+
   render() {
     const taskItems = this.props.accounts.map(account => {
-      return <AccountItem account={account} key={account._id} deleteAccount={this.deleteAccount} />
+      return <AccountItem account={account} key={account._id} name={account._id} balance={account.balance} deleteAccount={this.deleteAccount} selectAccount={this.selectAccount} />
     });
 
     return (
@@ -30,4 +36,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { deleteAccount })(AccountList);
+export default connect(mapStateToProps, { deleteAccount, selectAccount })(AccountList);
