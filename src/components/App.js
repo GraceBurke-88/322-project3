@@ -2,12 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import TaskList from './TaskList';
-import AddTask from './AddTask';
+import TaskList from './AccountList';
+import AddTask from './AddAccount';
 import { setTasks, tasksError, setAccounts, accountsError } from "../actions";
-import PageTabs from './PageTabs';
-import Page1 from './Page1';
-import Page2 from './Page2';
+import PageTabs from './pages/PageTabs';
+import Page1 from './pages/Page1';
+import Page2 from './pages/Page2';
 
 
 

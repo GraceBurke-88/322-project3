@@ -1,14 +1,15 @@
 import React from 'react';
+import {deleteAccount} from "../actions";
 
-const TaskItem1 = props => {
+const AccountItem = props => {
   return (
 
     <li className="list-group-item" style={{}}>
-      <h3>{ props.task.name }</h3>
+      <h3>{ props.account.name }</h3>
       <br/> Balance: <n/>
-      { props.task.balance }
+      { props.account.balance }
       <button type="button"
-              onClick={() => props.markDone(props.task)}
+              onClick={() => props.deleteAccount(props.account)}
               className="btn btn-primary" style={{ float: 'right' }}>
         Done
       </button>
@@ -17,4 +18,4 @@ const TaskItem1 = props => {
   )
 };
 
-export default TaskItem1;
+export default AccountItem;

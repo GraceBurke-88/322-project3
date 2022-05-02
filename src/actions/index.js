@@ -35,10 +35,12 @@ export const setAccounts = accounts => {
   }
 };
 
-export const addAccount = (text) => {
+export const addAccount = (name, balance, _id) => {
   return {
     type: 'ADD_ACCOUNT',
-    payload: text
+    payload: {
+      _id, name, balance
+    }
   }
 }
 
