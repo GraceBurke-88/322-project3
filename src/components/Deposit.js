@@ -20,7 +20,7 @@ class Deposit extends React.Component {
     onFormSubmit = (event) => {
         console.log(this.state)
         event.preventDefault();
-        this.props.deposit(this.state._id, parseInt(this.state.amount), this.props.stateList);
+        this.props.deposit(this.state._id, parseInt(this.state.amount));
         this.setState({_id:'', amount:''});
     }
 
