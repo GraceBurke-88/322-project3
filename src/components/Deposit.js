@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 import { deposit } from "../actions";
 
 class Deposit extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
-            name: this.props.name
+            _id: this.props.accounts._id,
+            amount: ''
             //console.log('hello')
             //this.state = { _id: 1 };
             // console.log(this.state)
@@ -18,10 +18,12 @@ class Deposit extends React.Component {
     }
 
     onFormSubmit = (event) => {
-        console.log(this.state)
+        //console.log(this.state)
         event.preventDefault();
         this.props.deposit(this.state._id, parseInt(this.state.amount));
-        this.setState({_id:'', amount:''});
+        console.log(this.state)
+        //console.log(parseInt(this.state.amount));
+        this.setState({amount:''});
     }
 
     render () {
@@ -29,7 +31,7 @@ class Deposit extends React.Component {
             <form onSubmit={this.onFormSubmit}>
                 <div className="form-group" style={{maxWidth:"200px"}}>
                     <label>Deposit</label>
-                    <input type="number" className="form-control"
+                    <input type="number" step="0.1" className="form-control"
                            name="amount" value={this.state.amount}
                            onChange={(e) => this.setState({amount: e.target.value})} />
                 </div>

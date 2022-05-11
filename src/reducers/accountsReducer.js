@@ -28,6 +28,25 @@ const accountsReducer = (state = [], action) => {
             return  newState1;
 
         case 'DEPOSIT':
+            const accountIndex2 = state.findIndex(t => t._id === action.payload._id);
+            console.log("index is: " + accountIndex2 )
+            //let newState2 = [ ...state ];
+            //console.log("hello" + newState2)
+            console.log(typeof(state[accountIndex2]))
+            //console.log(state[accountIndex2].balance)
+            state[accountIndex2].balance = state[accountIndex2].balance + action.payload.amount
+            console.log(state[accountIndex2].balance)
+            console.log(action.payload.amount)
+            console.log(state[1])
+            //return state;
+            return [ ...state ];
+
+
+
+            //newState2.selectedAccount.balance += action.payload.amount;
+
+
+
 
         default:
             return state;

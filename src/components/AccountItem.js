@@ -19,10 +19,9 @@ const AccountItem = props => {
             <h3>{ props.account.name }</h3>
         </button>
 
-
         <br/> Balance:{ props.account.balance }
 
-        <Deposit accounts={props.accounts} />
+        <Deposit accounts={props.account} />
 
         <Withdraw/>
 
