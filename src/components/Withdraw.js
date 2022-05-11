@@ -34,7 +34,7 @@ class Withdraw extends React.Component {
                            name="amount" value={this.state.amount}
                            onChange={(e) => this.setState({amount: e.target.value})} />
                 </div>
-                <input type="submit" className="btn btn-success" value={'Add'} />
+                <input type="submit" className="btn btn-success" value={'Submit'} />
 
             </form>
         )

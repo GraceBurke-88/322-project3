@@ -29,7 +29,7 @@ const AccountItem = props => {
       <button type="button"
               onClick={() => props.deleteAccount(props.account)}
               className="btn btn-primary" style={{ float: 'right' }}>
-        Done
+        Delete
       </button>
         </li>
 
