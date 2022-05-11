@@ -43,3 +43,12 @@ export const deposit = ( _id, amount) => {
     }
   }
 }
+
+export const withdraw = ( _id, amount) => {
+  return {
+    type: 'WITHDRAW',
+    payload: {
+      _id, amount
+    }
+  }
+}

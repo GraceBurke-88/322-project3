@@ -23,7 +23,7 @@ const AccountItem = props => {
 
         <Deposit accounts={props.account} />
 
-        <Withdraw/>
+        <Withdraw accounts={props.account} />
 
 
       <button type="button"
