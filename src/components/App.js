@@ -2,13 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import TaskList from './TaskList';
-import AddTask from './AddTask';
-import { setTasks, tasksError } from "../actions";
-import PageTabs from './PageTabs';
-import Page1 from './Page1';
-import Page2 from './Page2';
-
+import { setAccounts, accountsError } from "../actions";
+import PageTabs from './pages/PageTabs';
+import Page1 from './pages/Page1';
+import Page2 from './pages/Page2';
+import Page3 from './pages/Page3';
 
 
 class App extends React.Component {
@@ -19,13 +17,16 @@ class App extends React.Component {
   }
 
   getData() {
-    axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/posts')
+    axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/accounts')
       .then(response => {
-        this.props.setTasks(response.data);
+        this.props.setAccounts(response.data);
+        console.log(response.data)
       }).catch(error => {
-        this.props.tasksError();
+        this.props.accountsError();
       });
   }
+
+
   state = {
     view: 'page1'
   }
@@ -58,15 +59,16 @@ class App extends React.Component {
         return (this.wrapPage(
             <Page2 />
         ));
-
+      case 'page3':
+        return (this.wrapPage(
+            <Page3 />
+        ));
       default:
         return (this.wrapPage(
             <h2>Invalid Tab, choose another</h2>
         ));
     }
-
   }
-
 }
 
 const mapStateToProps = (state) => {
@@ -75,4 +77,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { setTasks, tasksError })(App);
+export default connect(mapStateToProps, {  setAccounts, accountsError })(App);

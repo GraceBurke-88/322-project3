@@ -1,0 +1,40 @@
+
+
+import React from 'react';
+import { connect } from 'react-redux';
+
+import { deposit } from "../actions";
+
+class Deposit extends React.Component {
+    //state = { name: this.props.name, balance: '' }
+    state ={ balance: " " }
+
+
+
+
+    onFormSubmit = (event) => {
+        console.log(this.state)
+        event.preventDefault();
+        //console.log(this.state.balance)
+        //const balance = this.state.balance + parseInt(this.state.num)
+        //this.props.deposit(parseInt(this.state.amount));
+        //this.setState({name:'', balance:''});
+    }
+
+    render () {
+        return (
+            <form onSubmit={this.onFormSubmit}>
+                <div className="form-group" style={{maxWidth:"200px"}}>
+                    <label>Deposit</label>
+                    <input type="number" className="form-control"
+                           name="amount" value={this.state.amount}
+                           onChange={(e) => this.setState({amount: e.target.value})} />
+                </div>
+                <input type="submit" className="btn btn-success" value={'Add'} />
+
+            </form>
+        )
+    }
+}
+
+export default connect(null,{ deposit })(Deposit);
