@@ -14,6 +14,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getData();
+    this.getData2();
   }
 
   getData() {
@@ -28,7 +29,15 @@ class App extends React.Component {
     axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/transactions')
         .then(response => {
           this.props.setTransactions(response.data);
-          console.log(response.data)
+        }).catch(error => {
+
+    });
+
+  }
+  getData2() {
+    axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/transactions')
+        .then(response => {
+          this.props.setTransactions(response.data);
         }).catch(error => {
 
     });

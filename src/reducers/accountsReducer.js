@@ -1,11 +1,9 @@
 const accountsReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_TRANSACTIONS':
-            console.log(state)
+        case 'SET_ACCOUNTS':
+            console.log(action.payload)
             return action.payload;
 
-        case 'SET_ACCOUNTS':
-            return action.payload;
         case 'ADD_ACCOUNT':
             console.log(state)
             let account = action.payload;

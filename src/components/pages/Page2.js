@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AccountList from "../AccountList";
+import TransactionList from "../TransactionList";
 
 
 const Page2 = props => {
@@ -8,6 +9,7 @@ const Page2 = props => {
 
         <div className="page-two">
             <h3>Transactions</h3>
+            <TransactionList />
 
 
 

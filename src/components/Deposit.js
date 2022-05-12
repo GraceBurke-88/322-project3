@@ -3,7 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { deposit } from "../actions";
+import {addTransactions, deposit} from "../actions";
 
 class Deposit extends React.Component {
     constructor(props) {
@@ -21,6 +21,7 @@ class Deposit extends React.Component {
         //console.log(this.state)
         event.preventDefault();
         this.props.deposit(this.state._id, parseInt(this.state.amount));
+        this.props.addTransactions('Deposit', parseInt(this.state.amount), this.state._id,)
 
         console.log(this.state)
         //console.log(parseInt(this.state.amount));
@@ -45,6 +46,6 @@ class Deposit extends React.Component {
 
 }
 
-export default connect(null,{ deposit })(Deposit);
+export default connect(null,{ deposit, addTransactions })(Deposit);
 
 
