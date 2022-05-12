@@ -1,41 +1,40 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 import './PageTabs.css';
 
 class PageTabs extends React.Component {
+    state = { currentPage: '/' }
 
     isActiveTab(tabName) {
-        return (tabName === this.props.currentView) ? 'nav-link active' : 'nav-link';
+        return (tabName === this.state.currentPage) ? 'nav-link active' : 'nav-link';
     }
 
     onTabClick(event, tabName) {
-        event.preventDefault();
-        this.props.onViewChange(tabName);
+        this.setState({ currentPage: tabName })
     }
 
     render () {
         return (
             <ul className='nav page-tabs'>
                 <li className='nav-item'>
-                    <a className={this.isActiveTab('page1')}
-                       onClick={(e) => this.onTabClick(e, 'page1')}>
-                        Dashboard
-                    </a>
+                    <Link className={this.isActiveTab('/')} to="/"
+                          onClick={event => this.onTabClick(event, '/')}>
+                        Grid View
+                    </Link>
                 </li>
                 <li className='nav-item'>
-                    <a className={this.isActiveTab('page2')}
-                       onClick={(e) => this.onTabClick(e, 'page2')}>
-                        Transactions
-                    </a>
+                    <Link className={this.isActiveTab('/page2')} to="/page2"
+                          onClick={event => this.onTabClick(event, '/page2')}>
+                        List View
+                    </Link>
                 </li>
                 <li className='nav-item'>
-                    <a className={this.isActiveTab('page3')}
-                       onClick={(e) => this.onTabClick(e, 'page3')}>
-                        Add Account
-                    </a>
+                    <Link className={this.isActiveTab('/page3')} to="/page3"
+                          onClick={event => this.onTabClick(event, '/page3')}>
+                        Add Task
+                    </Link>
                 </li>
-
             </ul>
         )
     }

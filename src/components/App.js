@@ -10,23 +10,8 @@ import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
 import VariablePage from "./pages/VariablePage";
 
-const App = () => {
-  return (
-      <div>
-        <Router>
-          <PageTabs/>
-          <div>
-            <Route path="/" exact component={Page1} />
-            <Route path="/page2" component={Page2} />
-            <Route path="/page3" component={Page3} />
-            <Route path="/page/:id" component={VariablePage} />
-          </div>
-        </Router>
-      </div>
-  )
-}
 
-class AppB extends React.Component {
+class App extends React.Component {
 
   componentDidMount() {
     this.getData();
