@@ -6,6 +6,24 @@ export const setAccounts = accounts => {
   }
 };
 
+export const setTransactions = transactions => {
+  return {
+    type: 'SET_TRANSACTIONS',
+    payload: transactions
+  }
+};
+
+export const addTransactions = (name, balance, _id) => {
+  return {
+    type: 'ADD_TRANSACTION',
+    payload: {
+      _id, name, balance
+    }
+  }
+}
+
+
+
 export const addAccount = (name, balance, _id) => {
   return {
     type: 'ADD_ACCOUNT',

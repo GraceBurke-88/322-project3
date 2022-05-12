@@ -1,6 +1,9 @@
-
 const accountsReducer = (state = [], action) => {
     switch (action.type) {
+        case 'SET_TRANSACTIONS':
+            console.log(state)
+            return action.payload;
+
         case 'SET_ACCOUNTS':
             return action.payload;
         case 'ADD_ACCOUNT':
@@ -17,14 +20,14 @@ const accountsReducer = (state = [], action) => {
             return accountList;
 
         case 'ACCOUNT_SELECTED':
-
             const accountIndex1 = state.findIndex(t => t._id === action.payload);
             console.log(accountIndex1 )
             let newState1 = [ ...state ];
+            console.log(state[accountIndex1])
             console.log(newState1)
             newState1.selectedAccount = action.payload;
             console.log(newState1)
-            console.log(state)
+            //console.log(state)
             return  newState1;
 
         case 'DEPOSIT':
@@ -54,12 +57,6 @@ const accountsReducer = (state = [], action) => {
             console.log(state[1])
             //return state;
             return [ ...state ];
-            return [ ...state ];
-
-
-
-
-            //newState2.selectedAccount.balance += action.payload.amount;
 
 
 

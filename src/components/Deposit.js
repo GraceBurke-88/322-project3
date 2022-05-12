@@ -21,6 +21,7 @@ class Deposit extends React.Component {
         //console.log(this.state)
         event.preventDefault();
         this.props.deposit(this.state._id, parseInt(this.state.amount));
+
         console.log(this.state)
         //console.log(parseInt(this.state.amount));
         this.setState({amount:''});

@@ -1,12 +1,14 @@
 import React from 'react';
 
-import Account from "../Account";
+import AccountList from "../AccountList";
 
 
 const Page2 = props => {
     return (
+
         <div className="page-two">
-            <h2>Transactions</h2>
+            <h3>Transactions</h3>
+
 
 
         </div>
@@ -14,3 +16,4 @@ const Page2 = props => {
 }
 
 export default Page2;
+

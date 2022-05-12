@@ -1,14 +1,13 @@
 import React from 'react';
-import {BrowserRouter, Route, Router} from 'react-router-dom';
+
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import { setAccounts, accountsError } from "../actions";
+import {setAccounts, accountsError, setTransactions} from "../actions";
 import PageTabs from './pages/PageTabs';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
-import VariablePage from "./pages/VariablePage";
 
 
 class App extends React.Component {
@@ -25,11 +24,20 @@ class App extends React.Component {
         }).catch(error => {
       this.props.accountsError();
     });
+
+    axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/transactions')
+        .then(response => {
+          this.props.setTransactions(response.data);
+          console.log(response.data)
+        }).catch(error => {
+
+    });
+
   }
 
 
   state = {
-    view: 'page1'
+    view: 'page3'
   }
 
   onViewChange(view) {
@@ -47,9 +55,9 @@ class App extends React.Component {
     );
   }
 
-
   render() {
     const { view } = this.state;
+    console.log(this.state)
 
     switch (view) {
       case 'page1':
@@ -71,4 +79,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, {  setAccounts, accountsError })(App);
+export default connect(mapStateToProps, {  setAccounts, accountsError, setTransactions })(App);

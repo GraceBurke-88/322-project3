@@ -8,7 +8,7 @@ const errorReducer = (state = DEFAULT_STATE, action) => {
     case 'GET_TODO_ERROR':
       return {
         ...state,
-        getTasks: 'Unable to get Todos from API. Please Try again later'
+        getTasks: 'Unable to get Accounts from API. Please Try again later'
       }
     default:
       return true;

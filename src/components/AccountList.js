@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {deleteAccount, selectAccount, deposit} from '../actions';
+import {deleteAccount, selectAccount} from '../actions';
 
 
 import AccountItem from './AccountItem';
