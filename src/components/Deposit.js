@@ -32,10 +32,11 @@ class Deposit extends React.Component {
         return (
             <form onSubmit={this.onFormSubmit}>
                 <div className="form-group" style={{maxWidth:"200px"}}>
-                    <label>Deposit</label>
-                    <input type="number" step="0.1" className="form-control"
+                    <label>Deposit Amount</label>
+                    <input  type="number" step="0.1" className="form-control"
                            name="amount" value={this.state.amount}
                            onChange={(e) => this.setState({amount: e.target.value})} />
+                    <label>Deposit Name</label>
                     <input type="text" className="form-control"
                            name="name" value={this.state.name}
                            onChange={(e) => this.setState({name: e.target.value})} />
