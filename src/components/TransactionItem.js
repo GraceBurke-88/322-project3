@@ -7,10 +7,9 @@ const TransactionItem = props => {
     return (
         <li className="list-group-item" style={{}}>
 
-            <br/> Name:{ props.transaction}
+            <br/> Transaction:{ props.transactions1}
 
         </li>
-
     )
 };
 

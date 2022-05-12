@@ -8,7 +8,7 @@ import TransactionItem from "./TransactionItem";
 class TransactionList extends React.Component {
 
     render() {
-        const transactionItems = this.props.transactions.map(transaction => {
+        const transactionItems = this.props.transactions1.map(transaction => {
             return <TransactionItem transaction={transaction}  />
         });
 
@@ -21,10 +21,10 @@ class TransactionList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return {
-        transactions: state.transactions
-
+        transactions1: state.transactions
     };
 }
 
-export default connect(mapStateToProps, { deleteAccount, selectAccount })(TransactionItem);
+export default connect(mapStateToProps, { deleteAccount, selectAccount })(TransactionList);

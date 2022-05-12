@@ -1,4 +1,4 @@
-const transactionReducer = (state = [], action) => {
+const transactionsReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_TRANSACTIONS':
             console.log(state)
@@ -16,4 +16,4 @@ const transactionReducer = (state = [], action) => {
     }
 }
 
-export default transactionReducer;
+export default transactionsReducer;

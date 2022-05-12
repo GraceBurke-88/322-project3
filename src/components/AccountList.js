@@ -5,7 +5,6 @@ import {deleteAccount, selectAccount} from '../actions';
 
 import AccountItem from './AccountItem';
 
-
 class AccountList extends React.Component {
 
   deleteAccount = (account) => {
