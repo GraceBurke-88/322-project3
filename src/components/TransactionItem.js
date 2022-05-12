@@ -7,7 +7,9 @@ const TransactionItem = props => {
     return (
         <li className="list-group-item" style={{}}>
 
-            <br/> Transaction:{ props.transactions1}
+            <br/> id: {props.transaction._id} \ type:{ props.transaction.type} \ amount: ${ props.transaction.amount} \ name:{ props.transaction.name}
+
+
 
         </li>
     )

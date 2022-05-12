@@ -2,9 +2,6 @@ import React from 'react';
 import Withdraw from "./Withdraw";
 import Deposit from "./Deposit";
 
-
-
-
 const AccountItem = props => {
 
     return (
