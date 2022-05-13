@@ -7,7 +7,7 @@ const transactionsReducer = (state = [], action) => {
         case 'ADD_TRANSACTION':
             console.log(state)
             let transaction = action.payload;
-            transaction._id = state.length +1;
+            transaction._id = state.length;
             state.push(transaction);
             return(state);
 
