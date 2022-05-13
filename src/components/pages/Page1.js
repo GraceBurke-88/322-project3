@@ -1,5 +1,6 @@
 import React from 'react';
 import AccountList from "../AccountList";
+import VariablePage from "./VariablePage";
 
 const Page1 = props => {
     return (

@@ -7,7 +7,6 @@ const Page4 = props => {
         <div className="page-three">
             <h3>Edit Account</h3>
             <EditAccount/>
-
         </div>
     )
 }

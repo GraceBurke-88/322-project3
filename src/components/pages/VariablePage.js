@@ -5,7 +5,6 @@ class VariablePage extends React.Component {
     goToHome = () => {
         this.props.history.push(`/`);
     }
-
     render() {
         return (
             <div className="page-variable">
@@ -15,5 +14,4 @@ class VariablePage extends React.Component {
         );
     }
 }
-
 export default VariablePage;
