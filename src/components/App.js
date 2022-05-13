@@ -59,7 +59,7 @@ class App extends React.Component {
 
   render() {
     const { view } = this.state;
-    console.log(this.state)
+    //console.log(this.state)
 
     switch (view) {
       case 'page1':

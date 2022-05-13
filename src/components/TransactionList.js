@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {deleteAccount, selectAccount} from '../actions';
+import {selectAccount} from '../actions';
 import TransactionItem from "./TransactionItem";
-import AccountItem from "./AccountItem";
 
 
 
@@ -12,9 +11,6 @@ class TransactionList extends React.Component {
         console.log(this.props.accounts[transactions.accountId-1]);
         return this.props.accounts[transactions.accountId-1];
     }
-
-
-
 
     render() {
         const transactionItems = this.props.transactions.map(transaction => {
