@@ -2,19 +2,29 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {deleteAccount, selectAccount} from '../actions';
 import TransactionItem from "./TransactionItem";
+import AccountItem from "./AccountItem";
 
 
 
 class TransactionList extends React.Component {
+    selectAccount = (transactions, accounts) => {
+        this.props.selectAccount(transactions.accountId);
+        console.log(this.props.accounts[transactions.accountId-1]);
+        return this.props.accounts[transactions.accountId-1];
+    }
+
+
+
 
     render() {
         const transactionItems = this.props.transactions.map(transaction => {
-            return <TransactionItem transaction={transaction} key={transaction._id} name={transaction.name} />
+            return <TransactionItem transaction={transaction} key={transaction._id} name={transaction.name} selectAccount={this.selectAccount} />
         });
 
         return (
             <ul className="task-list list-group">
                 { transactionItems }
+
             </ul>
         )
     }
@@ -23,8 +33,9 @@ class TransactionList extends React.Component {
 const mapStateToProps = (state) => {
     console.log(state)
     return {
-        transactions: state.transactions
+        transactions: state.transactions,
+        accounts: state.accounts
     };
 }
 
-export default connect(mapStateToProps, { deleteAccount, selectAccount })(TransactionList);
+export default connect(mapStateToProps, { selectAccount })(TransactionList);

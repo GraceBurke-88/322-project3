@@ -12,11 +12,11 @@ export const setTransactions = transactions => {
   }
 };
 
-export const addTransactions = (type, amount, name) => {
+export const addTransactions = (_id, type, amount, name, accountId) => {
   return {
     type: 'ADD_TRANSACTION',
     payload: {
-      type, amount, name
+      _id, accountId, type, amount, name
     }
   }
 }
@@ -25,6 +25,14 @@ export const addTransactions = (type, amount, name) => {
 export const addAccount = (name, balance, _id) => {
   return {
     type: 'ADD_ACCOUNT',
+    payload: {
+      _id, name, balance
+    }
+  }
+}
+export const editAccount = (_id, name, balance) => {
+  return {
+    type: 'EDIT_ACCOUNT',
     payload: {
       _id, name, balance
     }

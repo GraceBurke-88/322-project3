@@ -35,6 +35,12 @@ class PageTabs extends React.Component {
                         Add Account
                     </a>
                 </li>
+                <li className='nav-item'>
+                    <a className={this.isActiveTab('page4')}
+                       onClick={(e) => this.onTabClick(e, 'page4')}>
+                        Edit Account
+                    </a>
+                </li>
 
             </ul>
         )

@@ -20,12 +20,12 @@ class Deposit extends React.Component {
     onFormSubmit = (event) => {
         //console.log(this.state)
         event.preventDefault();
-        this.props.deposit(this.state._id, parseInt(this.state.amount));
-        this.props.addTransactions('Deposit', parseInt(this.state.amount), this.state.name)
+        this.props.deposit(this.state._id, parseFloat(this.state.amount));
+        this.props.addTransactions(0,'deposit', parseFloat(this.state.amount), this.state.name, this.state._id)
 
         console.log(this.state)
         //console.log(parseInt(this.state.amount));
-        this.setState({amount:''});
+        this.setState({amount:'', name:''});
     }
 
     render () {
@@ -35,10 +35,10 @@ class Deposit extends React.Component {
                 <div className="form-group" style={{maxWidth:"200px"}}>
                     <label>Deposit Name</label>
                     <input type="text" className="form-control"
-                           name="name" value={this.state.name}
+                           name="title" value={this.state.title}
                            onChange={(e) => this.setState({name: e.target.value})} />
                     <label>Deposit Amount</label>
-                    <input  type="number" step="0.1" className="form-control"
+                    <input  type="number" step="any" className="form-control"
                            name="amount" value={this.state.amount}
                            onChange={(e) => this.setState({amount: e.target.value})} />
 

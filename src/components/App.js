@@ -8,13 +8,14 @@ import PageTabs from './pages/PageTabs';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
+import Page4 from './pages/Page4';
 
 
 class App extends React.Component {
 
   componentDidMount() {
     this.getData();
-    this.getData2();
+
   }
 
   getData() {
@@ -34,19 +35,11 @@ class App extends React.Component {
     });
 
   }
-  getData2() {
-    axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/transactions')
-        .then(response => {
-          this.props.setTransactions(response.data);
-        }).catch(error => {
 
-    });
-
-  }
 
 
   state = {
-    view: 'page3'
+    view: 'page4'
   }
 
   onViewChange(view) {
@@ -75,6 +68,8 @@ class App extends React.Component {
         return (this.wrapPage(<Page2 />));
       case 'page3':
         return (this.wrapPage(<Page3 />));
+      case 'page4':
+        return (this.wrapPage(<Page4 />));
       default:
         return (this.wrapPage(
             <h2>Invalid Tab, choose another</h2>));

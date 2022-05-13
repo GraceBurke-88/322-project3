@@ -1,6 +1,4 @@
 import React from 'react';
-
-import AccountList from "../AccountList";
 import TransactionList from "../TransactionList";
 
 
