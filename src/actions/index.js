@@ -1,4 +1,3 @@
-
 export const setAccounts = accounts => {
   return {
     type: 'SET_ACCOUNTS',
@@ -6,9 +5,34 @@ export const setAccounts = accounts => {
   }
 };
 
+export const setTransactions = transactions => {
+  return {
+    type: 'SET_TRANSACTIONS',
+    payload: transactions
+  }
+};
+
+export const addTransactions = (_id, type, amount, name, accountId) => {
+  return {
+    type: 'ADD_TRANSACTION',
+    payload: {
+      _id, accountId, type, amount, name
+    }
+  }
+}
+
+
 export const addAccount = (name, balance, _id) => {
   return {
     type: 'ADD_ACCOUNT',
+    payload: {
+      _id, name, balance
+    }
+  }
+}
+export const editAccount = (_id, name, balance) => {
+  return {
+    type: 'EDIT_ACCOUNT',
     payload: {
       _id, name, balance
     }

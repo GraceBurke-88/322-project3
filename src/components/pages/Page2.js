@@ -1,12 +1,14 @@
 import React from 'react';
-
-import Account from "../Account";
+import TransactionList from "../TransactionList";
 
 
 const Page2 = props => {
     return (
+
         <div className="page-two">
-            <h2>Page 2: Can be shown through tabs</h2>
+            <h3>Transactions</h3>
+            <TransactionList />
+
 
 
         </div>
@@ -14,3 +16,4 @@ const Page2 = props => {
 }
 
 export default Page2;
+

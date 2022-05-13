@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import './PageTabs.css';
 
 class PageTabs extends React.Component {
@@ -25,7 +26,7 @@ class PageTabs extends React.Component {
                 <li className='nav-item'>
                     <a className={this.isActiveTab('page2')}
                        onClick={(e) => this.onTabClick(e, 'page2')}>
-                        Account Overview
+                        Transactions
                     </a>
                 </li>
                 <li className='nav-item'>
@@ -34,6 +35,13 @@ class PageTabs extends React.Component {
                         Add Account
                     </a>
                 </li>
+                <li className='nav-item'>
+                    <a className={this.isActiveTab('page4')}
+                       onClick={(e) => this.onTabClick(e, 'page4')}>
+                        Edit Account
+                    </a>
+                </li>
+
             </ul>
         )
     }

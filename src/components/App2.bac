@@ -1,45 +1,34 @@
 import React from 'react';
-
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import {setAccounts, accountsError, setTransactions} from "../actions";
+import { setAccounts, accountsError } from "../actions";
 import PageTabs from './pages/PageTabs';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
-import Page4 from './pages/Page4';
+import VariablePage from "./VariablePage";
 
 
 class App extends React.Component {
 
   componentDidMount() {
     this.getData();
-
   }
 
   getData() {
     axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/accounts')
-        .then(response => {
-          this.props.setAccounts(response.data);
-          console.log(response.data)
-        }).catch(error => {
-      this.props.accountsError();
-    });
-
-    axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/transactions')
-        .then(response => {
-          this.props.setTransactions(response.data);
-        }).catch(error => {
-
-    });
-
+      .then(response => {
+        this.props.setAccounts(response.data);
+        console.log(response.data)
+      }).catch(error => {
+        this.props.accountsError();
+      });
   }
 
 
-
   state = {
-    view: 'page4'
+    view: 'page1'
   }
 
   onViewChange(view) {
@@ -57,22 +46,27 @@ class App extends React.Component {
     );
   }
 
+
   render() {
     const { view } = this.state;
-    console.log(this.state)
 
     switch (view) {
       case 'page1':
-        return (this.wrapPage(<Page1 />));
+        return (this.wrapPage(
+            <Page1 />
+        ));
       case 'page2':
-        return (this.wrapPage(<Page2 />));
+        return (this.wrapPage(
+            <Page2 />
+        ));
       case 'page3':
-        return (this.wrapPage(<Page3 />));
-      case 'page4':
-        return (this.wrapPage(<Page4 />));
+        return (this.wrapPage(
+            <Page3 />
+        ));
       default:
         return (this.wrapPage(
-            <h2>Invalid Tab, choose another</h2>));
+            <h2>Invalid Tab, choose another</h2>
+        ));
     }
   }
 }
@@ -83,4 +77,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, {  setAccounts, accountsError, setTransactions })(App);
+export default connect(mapStateToProps, {  setAccounts, accountsError })(App);

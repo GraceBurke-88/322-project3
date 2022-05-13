@@ -1,12 +1,6 @@
 import React from 'react';
-//import { deleteAccount } from "../actions";
-import {connect} from 'react-redux';
 import Withdraw from "./Withdraw";
 import Deposit from "./Deposit";
-//import {selectAccount} from "../actions";
-import AccountList from "./AccountList";
-
-
 
 const AccountItem = props => {
 
