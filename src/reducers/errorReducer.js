@@ -1,14 +1,14 @@
 
 const DEFAULT_STATE = {
-  getTasks: ''
+  getAccounts: ''
 };
 
 const errorReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case 'GET_TODO_ERROR':
+    case 'GET_ACCT_ERROR':
       return {
         ...state,
-        getTasks: 'Unable to get Accounts from API. Please Try again later'
+        getAccounts: 'Unable to get Accounts from API. Please Try again later'
       }
     default:
       return true;

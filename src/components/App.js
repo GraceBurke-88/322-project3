@@ -39,7 +39,7 @@ class App extends React.Component {
 
 
   state = {
-    view: 'page4'
+    view: 'page1'
   }
 
   onViewChange(view) {
@@ -79,7 +79,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    errorMessage: state.errors.getTasks
+    errorMessage: state.errors.getAccounts
   };
 }
 

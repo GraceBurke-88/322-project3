@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addAccount, editAccount} from "../actions";
+import { editAccount} from "../actions";
 
 class EditAccount extends React.Component {
     state = { id:'', name: '', balance: '' }
@@ -34,11 +34,11 @@ class EditAccount extends React.Component {
                            name="balance" value={this.state.balance}
                            onChange={(e) => this.setState({balance: e.target.value})} />
                 </div>
-                <input type="submit" className="btn btn-success" value={'Add'} />
+                <input type="submit" className="btn btn-success" value={'Edit'} />
 
             </form>
         )
     }
 }
 
-export default connect(null,{ editAccount, })(EditAccount);
+export default connect(null,{ editAccount })(EditAccount);
